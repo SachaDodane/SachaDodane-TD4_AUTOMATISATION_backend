@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Run PHP_CodeSniffer
+./vendor/bin/phpcs
+if [ $? -ne 0 ]; then
+    echo "Code must follow PSR-12 coding standards"
+    exit 1
+fi
+
+# Run PHPStan
+./vendor/bin/phpstan analyse src tests
+if [ $? -ne 0 ]; then
+    echo "PHPStan found some errors"
+    exit 1
+fi
+
+# Run PHPUnit
+./vendor/bin/phpunit
+if [ $? -ne 0 ]; then
+    echo "Tests must pass before commit"
+    exit 1
+fi
+
+exit 0
