@@ -1,4 +1,6 @@
 {
+    "name": "sachadodane/td4_automatisation_backend",
+    "description": "Backend application for TD4 Automatisation project",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -10,7 +12,7 @@
         "doctrine/doctrine-bundle": "^2.11",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^2.17",
-        "fakerphp/faker": "^1.23",
+        "fakerphp/faker": "^1.24",
         "phpdocumentor/reflection-docblock": "^5.3",
         "symfony/asset": "7.2.*",
         "symfony/asset-mapper": "7.2.*",
