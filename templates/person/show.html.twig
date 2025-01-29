@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Person Details{% endblock %}
+
+{% block body %}
+    <h1>Person Details</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ person.id }}</td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td>{{ person.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{ person.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ person.age }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ person.email }}</td>
+            </tr>
+            <tr>
+                <th>Building</th>
+                <td>{{ person.building ? person.building.name : 'No building assigned' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_person_index') }}">back to list</a>
+{% endblock %}

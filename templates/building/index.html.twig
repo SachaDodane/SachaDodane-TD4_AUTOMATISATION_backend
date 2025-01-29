@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Buildings List{% endblock %}
+
+{% block body %}
+    <h1>Buildings List</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Capacity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for building in buildings %}
+            <tr>
+                <td>{{ building.id }}</td>
+                <td>{{ building.name }}</td>
+                <td>{{ building.address }}</td>
+                <td>{{ building.capacity }}</td>
+                <td>
+                    <a href="{{ path('app_building_show', {'id': building.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
